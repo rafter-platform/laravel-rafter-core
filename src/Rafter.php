@@ -4,22 +4,15 @@ namespace Rafter;
 
 class Rafter
 {
-    /**
-     * Create a new Rafter Instance.
-     */
-    public function __construct()
-    {
-        // constructor body
-    }
+    const QUEUE_ROUTE = '/_rafter/queue/work';
 
     /**
-     * Friendly welcome.
+     * Get the URL to the queue worker
      *
-     * @param string $phrase Phrase to return
-     * @return string Returns the phrase passed in
+     * @return string
      */
-    public function echoPhrase($phrase)
+    public static function queueWorkerUrl()
     {
-        return $phrase;
+        return $_ENV['RAFTER_WORKER_URL'] . static::QUEUE_ROUTE;
     }
 }
