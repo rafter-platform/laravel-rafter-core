@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "rafter-platform\\Rafter\\": "src"
+            "Rafter\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "rafter-platform\\Rafter\\Tests\\": "tests"
+            "Rafter\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -48,7 +48,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "rafter-platform\\Rafter\\RafterServiceProvider"
+                "Rafter\\RafterServiceProvider"
             ]
         }
     }
