@@ -1,0 +1,50 @@
+{
+    "name": "rafter-platform/laravel-rafter-core",
+    "description": "Laravel integration for the Rafter Platform",
+    "keywords": [
+        "rafter-platform",
+        "laravel-rafter-core"
+    ],
+    "homepage": "https://github.com/rafter-platform/laravel-rafter-core",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josh Larson",
+            "email": "jplhomer@gmail.com",
+            "homepage": "https://jplhomer.org",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "illuminate/support": "^6.15"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.3",
+        "phpunit/phpunit": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "rafter-platform\\Rafter\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "rafter-platform\\Rafter\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "rafter-platform\\Rafter\\RafterServiceProvider"
+            ]
+        }
+    }
+}
