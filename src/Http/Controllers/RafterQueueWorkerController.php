@@ -34,7 +34,7 @@ class RafterQueueWorkerController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function handle(Request $request)
+    public function __invoke(Request $request)
     {
         if (! static::$listeningForEvents) {
             $this->listenForEvents();

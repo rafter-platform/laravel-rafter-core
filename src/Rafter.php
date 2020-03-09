@@ -5,6 +5,7 @@ namespace Rafter;
 class Rafter
 {
     const QUEUE_ROUTE = '/_rafter/queue/work';
+    const SCHEDULE_ROUTE = '/_rafter/schedule/run';
 
     /**
      * Get the URL to the queue worker
