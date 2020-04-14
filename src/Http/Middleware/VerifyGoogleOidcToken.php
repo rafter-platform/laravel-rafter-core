@@ -4,7 +4,6 @@ namespace Rafter\Http\Middleware;
 
 use Closure;
 use Google_Client;
-use Illuminate\Support\Facades\Log;
 
 class VerifyGoogleOidcToken
 {

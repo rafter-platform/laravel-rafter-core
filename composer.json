@@ -17,6 +17,7 @@
     ],
     "require": {
         "php": "^7.3",
+        "google/apiclient": "^2.4",
         "google/cloud-tasks": "^1.5",
         "illuminate/cache": "~5.8.35|^6.0|^7.0",
         "illuminate/contracts": "~5.8.35|^6.0|^7.0",
