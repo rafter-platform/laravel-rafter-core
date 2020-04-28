@@ -55,10 +55,11 @@ class RafterServiceProvider extends ServiceProvider
             return;
         }
 
-        // Handle queue jobs
-        Route::group(['middleware' => [VerifyGoogleOidcToken::class, EnsureRafterWorker::class]], function () {
+        // Handle worker jobs and commands
+        Route::group(['middleware' => [EnsureRafterWorker::class]], function () {
             Route::post(Rafter::QUEUE_ROUTE, 'Rafter\Http\Controllers\RafterQueueWorkerController');
             Route::post(Rafter::SCHEDULE_ROUTE, 'Rafter\Http\Controllers\RafterScheduleRunController');
+            Route::post(Rafter::COMMAND_ROUTE, 'Rafter\Http\Controllers\RafterCommandRunController');
         });
     }
 
