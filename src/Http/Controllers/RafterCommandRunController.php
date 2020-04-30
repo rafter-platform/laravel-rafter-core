@@ -3,17 +3,18 @@
 namespace Rafter\Http\Controllers;
 
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Artisan;
+use Rafter\StreamingOutput;
 
 class RafterCommandRunController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke()
     {
         try {
-            Artisan::call($request->command);
-            return Artisan::output();
+            return response()->stream(function () {
+                Artisan::call(request()->command, [], new StreamingOutput);
+            });
         } catch (Exception $e) {
             return $e->getMessage();
         }
