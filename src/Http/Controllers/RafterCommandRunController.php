@@ -17,7 +17,7 @@ class RafterCommandRunController extends Controller
             }, 200, [
                 // Disable output buffering inside Nginx
                 'X-Accel-Buffering' => 'no',
-            ]));
+            ]);
         } catch (Exception $e) {
             return $e->getMessage();
         }
