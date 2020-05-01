@@ -14,7 +14,10 @@ class RafterCommandRunController extends Controller
         try {
             return response()->stream(function () {
                 Artisan::call(request()->command, [], new StreamingOutput);
-            });
+            }, 200, [
+                // Disable output buffering inside Nginx
+                'X-Accel-Buffering' => 'no',
+            ]));
         } catch (Exception $e) {
             return $e->getMessage();
         }
