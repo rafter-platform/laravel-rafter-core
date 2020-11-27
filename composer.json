@@ -18,12 +18,14 @@
     "require": {
         "php": "^7.3",
         "google/apiclient": "^2.4",
+        "google/cloud-storage": "^1.23",
         "google/cloud-tasks": "^1.5",
         "illuminate/cache": "~5.8.35|^6.0|^7.0|^8.0",
         "illuminate/contracts": "~5.8.35|^6.0|^7.0|^8.0",
         "illuminate/queue": "~5.8.35|^6.0|^7.0|^8.0",
         "illuminate/routing": "~5.8.35|^6.0|^7.0|^8.0",
-        "illuminate/support": "~5.8.35|^6.0|^7.0|^8.0"
+        "illuminate/support": "~5.8.35|^6.0|^7.0|^8.0",
+        "superbalist/flysystem-google-storage": "^7.2"
     },
     "require-dev": {
         "symfony/var-dumper": "^4.3",
