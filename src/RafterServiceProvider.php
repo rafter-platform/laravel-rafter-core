@@ -34,6 +34,7 @@ class RafterServiceProvider extends ServiceProvider
 
         $this->ensureQueueIsConfigured();
         $this->ensureCacheIsConfigured();
+        $this->ensureStorageIsConfigured();
     }
 
     /**
@@ -101,6 +102,16 @@ class RafterServiceProvider extends ServiceProvider
         Config::set('cache.stores.firestore', [
             'driver' => 'firestore',
             'collection' => 'cache', // Firestore collection name.
+        ]);
+    }
+
+    protected function ensureStorageIsConfigured()
+    {
+        $this->app->register(RafterStorageProvider::class);
+
+        Config::set('filesystems.disks.gcs', [
+            'driver' => 'gcs',
+            'bucket' => $_ENV['GCS_BUCKET'],
         ]);
     }
 }
